@@ -1,6 +1,7 @@
 {
   "name": "lifecycle",
   "version": "0.1.0",
+  "homepage": "/lifecycle",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.16",
