@@ -2,6 +2,7 @@
   "name": "lifecycle",
   "version": "0.1.0",
   "homepage": "/lifecycle",
+  "__COMMENT__": "add \"homepage\": \"/lifecycle\" when pushing to ftp",
   "private": true,
   "dependencies": {
     "@heroicons/react": "^2.0.16",
