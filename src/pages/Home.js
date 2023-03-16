@@ -8,7 +8,7 @@ function Home() {
     const DATA = [{'name': 'MacBook Pro', 'manufacturer': 'Apple', 'cost': 1000, 'footprint': 15}, {'name': 'ThinkPad X1 Carbon', 'manufacturer': 'Lenovo', 'cost': 1000, 'footprint': 17.5}];
     const [selectedDevices, setSelectedDevices] = React.useState([]);
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
-    const [desiredChange, setDesiredChange] = React.useState(0);
+    const [newLifespan, setNewLifespan] = React.useState(0);
     const [search, setSearch] = React.useState('');
 
     const addDevice = (device) => {
@@ -50,7 +50,6 @@ function Home() {
             totalCost += device.quantity * DATA[device.index].cost;
             GHG += device.quantity * DATA[device.index].footprint;
         });
-        const newLifespan = parseFloat(currentLifespan) + parseFloat(desiredChange);
         const prevCost = totalCost / currentLifespan;
         const newCost = totalCost / newLifespan;
         const totalSaved = prevCost - newCost;
@@ -61,7 +60,7 @@ function Home() {
         const trashRecycled = (GHG * 43.6 / 1000);
         const seedlings = (GHG * 16.5/1000);
         return (
-            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(currentLifespan) + parseFloat(desiredChange)} years, your estimated annual savings are <b>${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</b> and <b>{parseInt(GHG)}</b> kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer miles, planting {parseInt(seedlings)} new seedlings and letting them grow for ten years, or recycling {parseInt(trashRecycled)} bags of trash instead of throwing them in the landfill!</p>
+            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(newLifespan) - parseFloat(currentLifespan)} years, your estimated annual savings are <b>${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</b> and <b>{parseInt(GHG)}</b> kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer miles, planting {parseInt(seedlings)} new seedlings and letting them grow for ten years, or recycling {parseInt(trashRecycled)} bags of trash instead of throwing them in the landfill!</p>
         );
     }
 
@@ -124,7 +123,7 @@ function Home() {
     );
 
     if (selectedDevices.length > 0) {
-        if (currentLifespan > 0 && desiredChange !== 0) {
+        if (currentLifespan > 0 && newLifespan > 0) {
             results = (
                 calculate()
             );
@@ -164,7 +163,7 @@ function Home() {
                                             {DATA[device.index].manufacturer}
                                         </td>
                                         <td className="px-6 py-4">
-                                            <input type="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" value={device.quantity} onChange={(event) => {updateQuantity(event, device)}} required />
+                                            <input type="number" min="0" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" value={device.quantity} onChange={(event) => {updateQuantity(event, device)}} required />
                                         </td>
                                         <td className="px-6 py-4">
                                             ${DATA[device.index].cost}
@@ -244,16 +243,16 @@ function Home() {
                     <p className="font-normal text-sm">3.5</p>
                     <p className="font-normal text-sm">4</p>
                 </span>
-                <p className="text-lg font-semibold text-center">Desired Change (years)</p>
+                <p className="text-lg font-semibold text-center">New Lifespan (years)</p>
                 <input
                     type="range"
                     className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
                     min="0"
-                    max="4"
+                    max="8"
                     step="0.5"
-                    value={desiredChange}
-                    onChange={(event) => {setDesiredChange(event.target.value)}} />
-                <span className="flex justify-between mx-1 mb-1">
+                    value={newLifespan}
+                    onChange={(event) => {setNewLifespan(event.target.value)}} />
+                <span className="flex justify-between mx-1 mb-3">
                     <p className="font-normal text-sm">0</p>
                     <p className="font-normal text-sm">0.5</p>
                     <p className="font-normal text-sm">1</p>
@@ -263,8 +262,15 @@ function Home() {
                     <p className="font-normal text-sm">3</p>
                     <p className="font-normal text-sm">3.5</p>
                     <p className="font-normal text-sm">4</p>
+                    <p className="font-normal text-sm">4.5</p>
+                    <p className="font-normal text-sm">5</p>
+                    <p className="font-normal text-sm">5.5</p>
+                    <p className="font-normal text-sm">6</p>
+                    <p className="font-normal text-sm">6.5</p>
+                    <p className="font-normal text-sm">7</p>
+                    <p className="font-normal text-sm">7.5</p>
+                    <p className="font-normal text-sm">8</p>
                 </span>
-                <p className="text-lg font-semibold text-center mb-3">New Lifespan: {parseFloat(currentLifespan) + parseFloat(desiredChange)} years</p>
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
                 {results}
                 <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
