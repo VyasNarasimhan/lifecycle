@@ -6,25 +6,10 @@ import React from "react";
 function Home() {
 
     const DATA = [{'name': 'MacBook Pro', 'manufacturer': 'Apple', 'cost': 1000, 'footprint': 15}, {'name': 'ThinkPad X1 Carbon', 'manufacturer': 'Lenovo', 'cost': 1000, 'footprint': 17.5}];
-    const [newDevice, setNewDevice] = React.useState(-1);
     const [selectedDevices, setSelectedDevices] = React.useState([]);
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
     const [desiredChange, setDesiredChange] = React.useState(0);
     const [search, setSearch] = React.useState('');
-
-    const addDeviceToSelected = () => {
-        if (newDevice >= 0 && newDevice < DATA.length) {
-            for (let i = 0; i < selectedDevices.length; i++) {
-                if (selectedDevices[i].index === newDevice) {
-                    return;
-                }
-            }
-            setSelectedDevices([
-                ...selectedDevices,
-                {'index': newDevice, 'quantity': 0}
-            ]);
-        }
-    }
 
     const addDevice = (device) => {
         const index = DATA.indexOf(device);
@@ -37,6 +22,7 @@ function Home() {
             ...selectedDevices,
             {'index': index, 'quantity': 0}
         ]);
+        setSearch('');
     }
 
     const updateQuantity = (event, device) => {
@@ -75,7 +61,7 @@ function Home() {
         const trashRecycled = (GHG * 43.6 / 1000);
         const seedlings = (GHG * 16.5/1000);
         return (
-            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(currentLifespan) + parseFloat(desiredChange)} years, your estimated annual savings are ${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})} and {parseInt(GHG)} kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer miles, planting {parseInt(seedlings)} new seedlings and letting them grow for ten years, or recycling {parseInt(trashRecycled)} bags of trash instead of throwing them in the landfill!</p>
+            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(currentLifespan) + parseFloat(desiredChange)} years, your estimated annual savings are <b>${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</b> and <b>{parseInt(GHG)}</b> kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer miles, planting {parseInt(seedlings)} new seedlings and letting them grow for ten years, or recycling {parseInt(trashRecycled)} bags of trash instead of throwing them in the landfill!</p>
         );
     }
 
@@ -262,21 +248,21 @@ function Home() {
                 <input
                     type="range"
                     className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
-                    min="-2"
-                    max="2"
+                    min="0"
+                    max="4"
                     step="0.5"
                     value={desiredChange}
                     onChange={(event) => {setDesiredChange(event.target.value)}} />
                 <span className="flex justify-between mx-1 mb-1">
-                    <p className="font-normal text-sm">-2</p>
-                    <p className="font-normal text-sm">-1.5</p>
-                    <p className="font-normal text-sm">-1</p>
-                    <p className="font-normal text-sm ml-2">-0.5</p>
-                    <p className="font-normal text-sm ml-4">0</p>
-                    <p className="font-normal text-sm">+0.5</p>
-                    <p className="font-normal text-sm">+1</p>
-                    <p className="font-normal text-sm">+1.5</p>
-                    <p className="font-normal text-sm">+2</p>
+                    <p className="font-normal text-sm">0</p>
+                    <p className="font-normal text-sm">0.5</p>
+                    <p className="font-normal text-sm">1</p>
+                    <p className="font-normal text-sm">1.5</p>
+                    <p className="font-normal text-sm">2</p>
+                    <p className="font-normal text-sm">2.5</p>
+                    <p className="font-normal text-sm">3</p>
+                    <p className="font-normal text-sm">3.5</p>
+                    <p className="font-normal text-sm">4</p>
                 </span>
                 <p className="text-lg font-semibold text-center mb-3">New Lifespan: {parseFloat(currentLifespan) + parseFloat(desiredChange)} years</p>
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
