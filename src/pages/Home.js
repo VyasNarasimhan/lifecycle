@@ -2,10 +2,10 @@
 // import tracker from '../assets/tracker.png';
 // import focus from '../assets/focus.png';
 import React from "react";
+import DATA from '../assets/devices.json';
 
 function Home() {
 
-    const DATA = [{'name': 'MacBook Pro', 'manufacturer': 'Apple', 'cost': 1000, 'footprint': 15}, {'name': 'ThinkPad X1 Carbon', 'manufacturer': 'Lenovo', 'cost': 1000, 'footprint': 17.5}];
     const [selectedDevices, setSelectedDevices] = React.useState([]);
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
     const [newLifespan, setNewLifespan] = React.useState(0);
@@ -60,7 +60,7 @@ function Home() {
         const trashRecycled = (GHG * 43.6 / 1000);
         const seedlings = (GHG * 16.5/1000);
         return (
-            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(newLifespan) - parseFloat(currentLifespan)} years, your estimated annual savings are <b>${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</b> and <b>{parseInt(GHG)}</b> kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer miles, planting {parseInt(seedlings)} new seedlings and letting them grow for ten years, or recycling {parseInt(trashRecycled)} bags of trash instead of throwing them in the landfill!</p>
+            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(newLifespan)} {parseFloat(newLifespan) === 1 ? 'year' : 'years'}, your estimated annual savings are <b>${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</b> and <b>{parseInt(GHG)}</b> kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer {parseInt(gallonsOfGas) === 1 ? 'mile' : 'miles'}, planting {parseInt(seedlings)} new {parseInt(seedlings) === 1 ? 'seedling' : 'seedlings'} and letting them grow for ten years, or recycling {parseInt(trashRecycled)} {parseInt(trashRecycled) === 1 ? 'bag' : 'bags'} of trash instead of throwing them in the landfill!</p>
         );
     }
 

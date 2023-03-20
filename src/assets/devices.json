@@ -1,0 +1,1458 @@
+[
+    {
+      "name": "Macbook m1 pro",
+      "cost": 1999,
+      "footprint": 280,
+      "year": 2021,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook pro 13 Intel",
+      "cost": 1299,
+      "footprint": 252,
+      "year": 2020,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook m1 air",
+      "cost": 999,
+      "footprint": 158,
+      "year": 2020,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook m2 air",
+      "cost": 1199,
+      "footprint": 147,
+      "year": 2022,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook air (intel 2020)",
+      "cost": 999,
+      "footprint": 198,
+      "year": 2020,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook pro intel 2019",
+      "cost": 2399,
+      "footprint": 416,
+      "year": 2019,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook m2 pro",
+      "cost": 1999,
+      "footprint": 243,
+      "year": 2023,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "Macbook m2",
+      "cost": 1299,
+      "footprint": 138,
+      "year": 2022,
+      "manufacturer": "Apple"
+    },
+    {
+      "name": "XPS 15 9570",
+      "cost": 1349,
+      "footprint": 324,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 17 9710",
+      "cost": 1599,
+      "footprint": 509,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 15 9510",
+      "cost": 2449,
+      "footprint": 431,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 15 9500",
+      "cost": 2920,
+      "footprint": 380,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 15 9520",
+      "cost": 1499,
+      "footprint": 431,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 9320",
+      "cost": 1199,
+      "footprint": 380,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 9315 2 in 1",
+      "cost": 999,
+      "footprint": 411,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 9315",
+      "cost": 830,
+      "footprint": 404,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 15 9560",
+      "cost": 1775,
+      "footprint": 337,
+      "year": 2017,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9380",
+      "cost": 1199,
+      "footprint": 317,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9370",
+      "cost": 1499,
+      "footprint": 297,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9365",
+      "cost": 1149,
+      "footprint": 287,
+      "year": 2017,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9360",
+      "cost": 890,
+      "footprint": 286,
+      "year": 2017,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9310 2-in-1",
+      "cost": 1490,
+      "footprint": 342,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9310",
+      "cost": 1050,
+      "footprint": 322,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 9300",
+      "cost": 1295,
+      "footprint": 327,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 13 7390",
+      "cost": 1599,
+      "footprint": 320,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 9720",
+      "cost": 980,
+      "footprint": 524,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "XPS 8960",
+      "cost": 749,
+      "footprint": 498,
+      "year": 2023,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 13 5320",
+      "cost": 1299,
+      "footprint": 326,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 5420",
+      "cost": 1199,
+      "footprint": 344,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 5425",
+      "cost": 1150,
+      "footprint": 345,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 7420 2-in-1",
+      "cost": 1099,
+      "footprint": 366,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 7425 2-in-1",
+      "cost": 1099,
+      "footprint": 355,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 16 5620",
+      "cost": 1249,
+      "footprint": 386,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 16 5625",
+      "cost": 1220,
+      "footprint": 381,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 16 7620 2-in-1",
+      "cost": 1499,
+      "footprint": 403,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 Plus 7420",
+      "cost": 1299,
+      "footprint": 376,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 16 Plus 7620",
+      "cost": 1599,
+      "footprint": 420,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 3420",
+      "cost": 699,
+      "footprint": 282,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 16 7630 2-in-1",
+      "cost": 949,
+      "footprint": 396,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 14 5430",
+      "cost": 1879,
+      "footprint": 295,
+      "year": 2023,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Inspiron 13 5330",
+      "cost": 1519,
+      "footprint": 328,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Vostro 15 3510",
+      "cost": 1619,
+      "footprint": 273,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Vostro 15 3515",
+      "cost": 1619,
+      "footprint": 282,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Vostro 5320",
+      "cost": 1430,
+      "footprint": 326,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Vostro 5620",
+      "cost": 1500,
+      "footprint": 386,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Vostro 5625",
+      "cost": 1500,
+      "footprint": 380,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Vostro 7620",
+      "cost": 1700,
+      "footprint": 412,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7760",
+      "cost": 1379,
+      "footprint": 533,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7750",
+      "cost": 1379,
+      "footprint": 495,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7740",
+      "cost": 1359,
+      "footprint": 463,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7730",
+      "cost": 1379,
+      "footprint": 476,
+      "year": 2017,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7720",
+      "cost": 1599,
+      "footprint": 416,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7540",
+      "cost": 2189,
+      "footprint": 367,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7530",
+      "cost": 1649,
+      "footprint": 399,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7550",
+      "cost": 1799,
+      "footprint": 455,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7560",
+      "cost": 1799,
+      "footprint": 458,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 7520",
+      "cost": 1899,
+      "footprint": 399,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5760",
+      "cost": 1459,
+      "footprint": 509,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5560",
+      "cost": 1459,
+      "footprint": 432,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5550",
+      "cost": 1459,
+      "footprint": 414,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5570",
+      "cost": 1459,
+      "footprint": 443,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5470",
+      "cost": 1359,
+      "footprint": 395,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5540",
+      "cost": 1219,
+      "footprint": 512,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5530",
+      "cost": 1359,
+      "footprint": 340,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Precision 5520",
+      "cost": 649,
+      "footprint": 368,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Chromebook 5190",
+      "cost": 528,
+      "footprint": 220,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Chromebook 5190 2-In-1",
+      "cost": 699,
+      "footprint": 219,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9520 2-in-1",
+      "cost": 1989,
+      "footprint": 361,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9520",
+      "cost": 1989,
+      "footprint": 367,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9510 2-in-1",
+      "cost": 1611,
+      "footprint": 482,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9510",
+      "cost": 2749,
+      "footprint": 482,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9420 2-in-1",
+      "cost": 1499,
+      "footprint": 350,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9420",
+      "cost": 1299,
+      "footprint": 344,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9410 2-in-1",
+      "cost": 899,
+      "footprint": 357,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9410",
+      "cost": 899,
+      "footprint": 356,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9330",
+      "cost": 2085,
+      "footprint": 372,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7330 Rugged Extreme",
+      "cost": 3885,
+      "footprint": 348,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7490",
+      "cost": 1401,
+      "footprint": 241,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7480",
+      "cost": 599,
+      "footprint": 249,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7420 2-in-1",
+      "cost": 1669,
+      "footprint": 353,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7420",
+      "cost": 4200,
+      "footprint": 341,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7410 2-in-1 Chromebook Enterprise",
+      "cost": 1099,
+      "footprint": 463,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7410 2-in-1",
+      "cost": 1579,
+      "footprint": 338,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7410 Chromebook Enterprise",
+      "cost": 1900,
+      "footprint": 454,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7410",
+      "cost": 1579,
+      "footprint": 329,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7400 2-in-1",
+      "cost": 1599,
+      "footprint": 351,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7400",
+      "cost": 1230,
+      "footprint": 320,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7390 2-in-1",
+      "cost": 599,
+      "footprint": 332,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7390",
+      "cost": 1249,
+      "footprint": 222,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7389",
+      "cost": 399,
+      "footprint": 289,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7380",
+      "cost": 1199,
+      "footprint": 259,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7370",
+      "cost": 1299,
+      "footprint": 288,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7350",
+      "cost": 489,
+      "footprint": 297,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7320 2-in-1",
+      "cost": 1749,
+      "footprint": 333,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7320 Detachable",
+      "cost": 1699,
+      "footprint": 82,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7320",
+      "cost": 799,
+      "footprint": 336,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7310 2-in-1",
+      "cost": 1299,
+      "footprint": 326,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7310",
+      "cost": 2455,
+      "footprint": 328,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7300",
+      "cost": 1599,
+      "footprint": 323,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5591",
+      "cost": 1099,
+      "footprint": 305,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5590",
+      "cost": 499,
+      "footprint": 271,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5580",
+      "cost": 599,
+      "footprint": 299,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5550",
+      "cost": 420,
+      "footprint": 259,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5521",
+      "cost": 1299,
+      "footprint": 379,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5520",
+      "cost": 1011,
+      "footprint": 324,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5511",
+      "cost": 899,
+      "footprint": 378,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5510",
+      "cost": 1099,
+      "footprint": 348,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5501",
+      "cost": 1999,
+      "footprint": 403,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5500",
+      "cost": 1629,
+      "footprint": 393,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude Rugged 5424",
+      "cost": 2499,
+      "footprint": 361,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5400 Chromebook Enterprise",
+      "cost": 1299,
+      "footprint": 325,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5400",
+      "cost": 699,
+      "footprint": 315,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430 Rugged",
+      "cost": 2799,
+      "footprint": 370,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5320 2-in-1",
+      "cost": 799,
+      "footprint": 308,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5320",
+      "cost": 999,
+      "footprint": 348,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5310 2-in-1",
+      "cost": 849,
+      "footprint": 299,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5310",
+      "cost": 849,
+      "footprint": 300,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5300 2-in-1",
+      "cost": 1519,
+      "footprint": 316,
+      "year": 2020,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5300 2-in-1 Chromebook Enterprise",
+      "cost": 1469,
+      "footprint": 299,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5300",
+      "cost": 1319,
+      "footprint": 296,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5330 2-in-1",
+      "cost": 1389,
+      "footprint": 343,
+      "year": 2019,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5290 2-in-1",
+      "cost": 899,
+      "footprint": 268,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5290",
+      "cost": 899,
+      "footprint": 218,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5289",
+      "cost": 399,
+      "footprint": 259,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5285",
+      "cost": 2044,
+      "footprint": 258,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5280",
+      "cost": 849,
+      "footprint": 225,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5250",
+      "cost": 214,
+      "footprint": 235,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7530",
+      "cost": 1539,
+      "footprint": 314,
+      "year": 2018,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7330",
+      "cost": 2276,
+      "footprint": 277,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7330 2-in-1",
+      "cost": 1699,
+      "footprint": 296,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7430",
+      "cost": 1459,
+      "footprint": 286,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7430 2-in-1",
+      "cost": 1596,
+      "footprint": 359,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9430",
+      "cost": 2289,
+      "footprint": 375,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9430 2-in-1",
+      "cost": 2759,
+      "footprint": 380,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7520",
+      "cost": 1749,
+      "footprint": 364,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430",
+      "cost": 1169,
+      "footprint": 301,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5431",
+      "cost": 1459,
+      "footprint": 298,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5530",
+      "cost": 1579,
+      "footprint": 364,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5531",
+      "cost": 1689,
+      "footprint": 373,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430 Chromebook",
+      "cost": 359,
+      "footprint": 329,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430 2-in-1 Chromebook",
+      "cost": 1099,
+      "footprint": 335,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7330 2-in-1",
+      "cost": 1819,
+      "footprint": 296,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7430",
+      "cost": 2319,
+      "footprint": 286,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7430 2-in-1",
+      "cost": 2099,
+      "footprint": 359,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9430",
+      "cost": 2459,
+      "footprint": 375,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 9430 2-in-1",
+      "cost": 2759,
+      "footprint": 380,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 7530",
+      "cost": 1749,
+      "footprint": 364,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430",
+      "cost": 1529,
+      "footprint": 301,
+      "year": 2021,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5431",
+      "cost": 1459,
+      "footprint": 298,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5530",
+      "cost": 1579,
+      "footprint": 364,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5531",
+      "cost": 1999,
+      "footprint": 373,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430 Chromebook",
+      "cost": 359,
+      "footprint": 329,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "Latitude 5430 2-in-1 Chromebook",
+      "cost": 1099,
+      "footprint": 335,
+      "year": 2022,
+      "manufacturer": "Dell"
+    },
+    {
+      "name": "HP Spectre x360 13.5",
+      "cost": 1249,
+      "footprint": 468,
+      "year": 2022,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Spectre x360 16",
+      "cost": 1349,
+      "footprint": 564,
+      "year": 2022,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Envy x360 13.3",
+      "cost": 699,
+      "footprint": 271,
+      "year": 2020,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Envy x360 15.6",
+      "cost": 799,
+      "footprint": 323,
+      "year": 2022,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Pavilion Aero 13",
+      "cost": 749,
+      "footprint": 440,
+      "year": 2021,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Pavilion 14",
+      "cost": 999,
+      "footprint": 217,
+      "year": 2022,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Pavilion plus 14",
+      "cost": 799,
+      "footprint": 275,
+      "year": 2022,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Pavilion x360 14\u201d",
+      "cost": 649,
+      "footprint": 205,
+      "year": 2022,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "HP Pavilion 15",
+      "cost": 999,
+      "footprint": 470,
+      "year": 2020,
+      "manufacturer": "HP"
+    },
+    {
+      "name": "Slim 7 (14\u201d Intel)",
+      "cost": 1140,
+      "footprint": 577,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Slim 7i carbon",
+      "cost": 1139,
+      "footprint": 558,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Lenovo Slim 7 Pro X",
+      "cost": 1099,
+      "footprint": 368,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Yoga Slim 7 Pro 14 IHU5 O",
+      "cost": 1358,
+      "footprint": 577,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Yoga Slim 7 Pro 16",
+      "cost": 999,
+      "footprint": 1040,
+      "year": 2021,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Yoga 6 13 AMD",
+      "cost": 594,
+      "footprint": 354,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Yoga 6 touchscreen",
+      "cost": 749,
+      "footprint": 787,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Yoga 7",
+      "cost": 869,
+      "footprint": 381,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Yoga 9",
+      "cost": 1149,
+      "footprint": 512,
+      "year": 2023,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad gaming 3",
+      "cost": 899,
+      "footprint": 875,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad flex 5",
+      "cost": 589,
+      "footprint": 482,
+      "year": 2020,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad 3",
+      "cost": 499,
+      "footprint": 359,
+      "year": 2020,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "IdeaPad Slim 9i",
+      "cost": 979,
+      "footprint": 418,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad 5 Pro 14",
+      "cost": 739,
+      "footprint": 360,
+      "year": 2023,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad 5 Pro 16",
+      "cost": 859,
+      "footprint": 469,
+      "year": 2023,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad flex 5 chromebook 13",
+      "cost": 319,
+      "footprint": 318,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Ideapad S340 touch",
+      "cost": 698,
+      "footprint": 378,
+      "year": 2019,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 14 G3",
+      "cost": 751,
+      "footprint": 389,
+      "year": 2021,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 14 G4",
+      "cost": 582,
+      "footprint": 788,
+      "year": 2020,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 15 G4",
+      "cost": 609,
+      "footprint": 256,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 13s G4",
+      "cost": 786,
+      "footprint": 370,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 14s Yoga G2",
+      "cost": 840,
+      "footprint": 233,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 13x G2",
+      "cost": 1039,
+      "footprint": 452,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook Plus",
+      "cost": 1457,
+      "footprint": 489,
+      "year": 2023,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkbook 16p",
+      "cost": 1392,
+      "footprint": 586,
+      "year": 2023,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkpad carbon x1 G10",
+      "cost": 1164,
+      "footprint": 1340,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkpad e15 G4",
+      "cost": 525,
+      "footprint": 978,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "Thinkpad t14 G4",
+      "cost": 935,
+      "footprint": 233,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad E14 Gen 4",
+      "cost": 529,
+      "footprint": 809,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad X1 Carbon Gen 9",
+      "cost": 1300,
+      "footprint": 508,
+      "year": 2021,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad T16",
+      "cost": 1055,
+      "footprint": 562,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad X1 Extreme Gen 5",
+      "cost": 1589,
+      "footprint": 1340,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad X1 Yoga Gen 7",
+      "cost": 1239,
+      "footprint": 414,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad T14s Gen 3",
+      "cost": 1024,
+      "footprint": 518,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad P16",
+      "cost": 1639,
+      "footprint": 669,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad T14s Gen 2",
+      "cost": 734,
+      "footprint": 413,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad T14s Gen 3",
+      "cost": 1149,
+      "footprint": 403,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad X1 Nano Gen 2",
+      "cost": 1259,
+      "footprint": 417,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad T15p Gen 3",
+      "cost": 1462,
+      "footprint": 661,
+      "year": 2021,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad P14s Gen 3",
+      "cost": 1139,
+      "footprint": 405,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad Z13",
+      "cost": 1034,
+      "footprint": 416,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad P15v Gen 3",
+      "cost": 1412,
+      "footprint": 661,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad L13 Gen 3",
+      "cost": 795,
+      "footprint": 512,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad X13 Yoga Gen 3",
+      "cost": 1192,
+      "footprint": 493,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad X13 Gen 3",
+      "cost": 1055,
+      "footprint": 397,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    },
+    {
+      "name": "ThinkPad Z16",
+      "cost": 1355,
+      "footprint": 545,
+      "year": 2022,
+      "manufacturer": "Lenovo"
+    }
+  ]
