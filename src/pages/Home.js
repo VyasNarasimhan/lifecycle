@@ -223,8 +223,8 @@ function Home() {
                 </form>
                 {DATA.filter(device => ((device.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 || device.manufacturer.toLowerCase().indexOf(search.toLowerCase()) !== -1) && search.length > 0)).length > 0 && searchResults}
                 {deviceDisplay}
-                <p className="text-xl font-semibold mb-1">Step 2: Set Lifespan</p>
-                <p className="text-lg font-semibold text-center">Current Lifespan (years)</p>
+                <p className="text-xl font-semibold mb-1">Step 2: Set Replacement Cycle</p>
+                <p className="text-lg font-semibold text-center">Current Replacement Cycle (years)</p>
                 <input
                     type="range"
                     className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
@@ -244,7 +244,7 @@ function Home() {
                     <p className="font-normal text-sm">3.5</p>
                     <p className="font-normal text-sm">4</p>
                 </span>
-                <p className="text-lg font-semibold text-center">New Lifespan (years)</p>
+                <p className="text-lg font-semibold text-center">New Replacement Cycle (years)</p>
                 <input
                     type="range"
                     className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
