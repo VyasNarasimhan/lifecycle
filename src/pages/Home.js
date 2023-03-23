@@ -1,7 +1,6 @@
 // import github from '../assets/github-mark.png';
 // import tracker from '../assets/tracker.png';
 // import focus from '../assets/focus.png';
-//test
 import React from "react";
 import DATA from '../assets/devices.json';
 
