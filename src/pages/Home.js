@@ -242,6 +242,14 @@ function Home() {
                     <p className="font-normal text-sm">3</p>
                     <p className="font-normal text-sm">3.5</p>
                     <p className="font-normal text-sm">4</p>
+                    <p className="font-normal text-sm">4.5</p>
+                    <p className="font-normal text-sm">5</p>
+                    <p className="font-normal text-sm">5.5</p>
+                    <p className="font-normal text-sm">6</p>
+                    <p className="font-normal text-sm">6.5</p>
+                    <p className="font-normal text-sm">7</p>
+                    <p className="font-normal text-sm">7.5</p>
+                    <p className="font-normal text-sm">8</p>
                 </span>
                 <p className="text-lg font-semibold text-center">New Replacement Cycle (years)</p>
                 <input
