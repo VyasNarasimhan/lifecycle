@@ -271,6 +271,10 @@ function Home() {
                     <p className="font-normal text-sm">7.5</p>
                     <p className="font-normal text-sm">8</p>
                 </span>
+                {newLifespan < currentLifespan && 
+                <div class="p-4 mb-2 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+                    <span class="font-medium">Your new replacement cycle is smaller than your existing replacement cycle. This will result in you spending more money and more carbon emissions.</span>
+                </div>}
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
                 {results}
                 <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
