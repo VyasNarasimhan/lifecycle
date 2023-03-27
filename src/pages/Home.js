@@ -223,16 +223,17 @@ function Home() {
                 {DATA.filter(device => ((device.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 || device.manufacturer.toLowerCase().indexOf(search.toLowerCase()) !== -1) && search.length > 0)).length > 0 && searchResults}
                 {deviceDisplay}
                 <p className="text-xl font-semibold mb-1">Step 2: Set Replacement Cycle</p>
+                <p className="text-sm italic mb-1">This is the amount of time (on average) that the department keeps their devices for. For example, if you replace your devices every 4 years, your current replacement cycle would be 4.</p>
                 <p className="text-lg font-semibold text-center">Current Replacement Cycle (years)</p>
                 <input
                     type="range"
                     className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
                     min="0"
-                    max="4"
+                    max="8"
                     step="0.5"
                     value={currentLifespan} 
                     onChange={(event) => {setCurrentLifespan(event.target.value)}} />
-                <span className="flex justify-between mx-1 mb-1">
+                <span className="flex justify-between mx-1 mb-8">
                     <p className="font-normal text-sm">0</p>
                     <p className="font-normal text-sm">0.5</p>
                     <p className="font-normal text-sm">1</p>
