@@ -20,7 +20,7 @@ function Home() {
         }
         setSelectedDevices([
             ...selectedDevices,
-            {'index': index, 'quantity': 0}
+            {'index': index, 'quantity': 1}
         ]);
         setSearch('');
     }
