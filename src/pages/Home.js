@@ -11,7 +11,6 @@ function Home() {
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
     const [newLifespan, setNewLifespan] = React.useState(0);
     const [search, setSearch] = React.useState('');
-    const [displayGraphs, setDisplayGraphs] = React.useState(false);
 
     const addDevice = (device) => {
         const index = DATA.indexOf(device);
@@ -25,7 +24,6 @@ function Home() {
             {'index': index, 'quantity': 1}
         ]);
         setSearch('');
-        setDisplayGraphs(false);
     }
 
     const updateQuantity = (event, device) => {
@@ -36,7 +34,6 @@ function Home() {
                 return selected;
             }
         }));
-        setDisplayGraphs(false);
     }
 
     const deleteRow = (device) => {
@@ -45,7 +42,6 @@ function Home() {
                 selected.index !== device.index
             )
         );
-        setDisplayGraphs(false);
     }
 
     const calculate = () => {
@@ -237,7 +233,7 @@ function Home() {
                     max="8"
                     step="0.5"
                     value={currentLifespan} 
-                    onChange={(event) => {setCurrentLifespan(event.target.value); setDisplayGraphs(false);}} />
+                    onChange={(event) => {setCurrentLifespan(event.target.value)}} />
                 <span className="flex justify-between mx-1 mb-8">
                     <p className="font-normal text-sm">0</p>
                     <p className="font-normal text-sm">0.5</p>
