@@ -3,6 +3,7 @@
 // import focus from '../assets/focus.png';
 import React from "react";
 import DATA from '../assets/devices.json';
+import LineGraphs from "./LineGraphs";
 
 function Home() {
 
@@ -10,6 +11,7 @@ function Home() {
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
     const [newLifespan, setNewLifespan] = React.useState(0);
     const [search, setSearch] = React.useState('');
+    const [displayGraphs, setDisplayGraphs] = React.useState(false);
 
     const addDevice = (device) => {
         const index = DATA.indexOf(device);
@@ -23,6 +25,7 @@ function Home() {
             {'index': index, 'quantity': 1}
         ]);
         setSearch('');
+        setDisplayGraphs(false);
     }
 
     const updateQuantity = (event, device) => {
@@ -33,6 +36,7 @@ function Home() {
                 return selected;
             }
         }));
+        setDisplayGraphs(false);
     }
 
     const deleteRow = (device) => {
@@ -41,6 +45,7 @@ function Home() {
                 selected.index !== device.index
             )
         );
+        setDisplayGraphs(false);
     }
 
     const calculate = () => {
@@ -54,7 +59,7 @@ function Home() {
         const newCost = totalCost / newLifespan;
         const totalSaved = prevCost - newCost;
         const prevGHG = GHG / currentLifespan;
-        const newGHG = GHG / newLifespan
+        const newGHG = GHG / newLifespan;
         GHG = prevGHG - newGHG;
         const gallonsOfGas = (GHG * 2445/ 1000);
         const trashRecycled = (GHG * 43.6 / 1000);
@@ -232,7 +237,7 @@ function Home() {
                     max="8"
                     step="0.5"
                     value={currentLifespan} 
-                    onChange={(event) => {setCurrentLifespan(event.target.value)}} />
+                    onChange={(event) => {setCurrentLifespan(event.target.value); setDisplayGraphs(false);}} />
                 <span className="flex justify-between mx-1 mb-8">
                     <p className="font-normal text-sm">0</p>
                     <p className="font-normal text-sm">0.5</p>
@@ -281,11 +286,12 @@ function Home() {
                     <p className="font-normal text-sm">8</p>
                 </span>
                 {newLifespan < currentLifespan && 
-                <div class="p-4 mb-2 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
-                    <span class="font-medium">Your new replacement cycle is smaller than your existing replacement cycle. This will result in you spending more money and more carbon emissions.</span>
+                <div className="p-4 mb-2 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
+                    <span className="font-medium">Your new replacement cycle is smaller than your existing replacement cycle. This will result in you spending more money and more carbon emissions.</span>
                 </div>}
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
                 {results}
+                <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} />
                 <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
             </div>
         </div>
