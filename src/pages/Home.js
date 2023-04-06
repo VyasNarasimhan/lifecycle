@@ -77,43 +77,51 @@ function Home() {
         </div>
     );
 
+    const getHighlightedText = (text, highlight) => {
+        // Split text on highlight term, include term itself into parts, ignore case
+        const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+        return (
+            <div className="font-normal">
+                {parts.map(part => part.toLowerCase() === highlight.toLowerCase() ? <span className="font-medium">{part}</span> : part)}
+            </div>
+        );
+    }
+
+    const searched = (device) => {
+        return (device.manufacturer + " " + device.name).toLowerCase().indexOf(search.toLowerCase()) !== -1;
+    }
+
     let searchResults = (
         <div className="relative overflow-x-auto mb-3">
             <table className="w-full text-sm text-left text-gray-500 border">
                 <thead className="border text-xs text-gray-700 uppercase">
                     <tr>
                         <th scope="col" className="px-6 py-3">
-                            Name
-                        </th>
-                        <th scope="col" className="px-6 py-3">
-                            Manufacturer
+                            Device
                         </th>
                         <th scope="col" className="px-6 py-3">
                             Cost
                         </th>
-                        <th scope="col" className="px-6 py-3">
+                        <th scope="col" className="px-6 py-3 flex justify-center">
                             Carbon Footprint
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {DATA.filter(device => (device.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 || device.manufacturer.toLowerCase().indexOf(search.toLowerCase()) !== -1) && search.length > 0).map((device) => {
+                    {DATA.filter(device => searched(device) && search.length > 0).map((device) => {
                         return (
                             <tr className="bg-white border-b">
-                                <th scope="row" className="px-6 py-4 font-medium">
-                                    {device.name}
+                                <th scope="row" className="px-6 py-2">
+                                    {getHighlightedText(device.manufacturer + " " + device.name, search)}
                                 </th>
-                                <td className="px-6 py-4">
-                                    {device.manufacturer}
-                                </td>
-                                <td className="px-6 py-4">
+                                <td className="px-6 py-2">
                                     ${device.cost}
                                 </td>
-                                <td className="px-6 py-4">
-                                    {device.footprint} kg
+                                <td className="px-6 py-2">
+                                    <div className="flex justify-center">{device.footprint} kg</div>
                                 </td>
-                                <td className="px-6 py-4">
-                                <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none" onClick={() => {addDevice(device)}}>Add</button>
+                                <td className="px-6 py-2 flex justify-end">
+                                    <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none" onClick={() => {addDevice(device)}}>Add</button>
                                 </td>
                             </tr>
                         );
@@ -197,31 +205,20 @@ function Home() {
                     <p className="text-lg font-light mb-2">The Lifecycle Optimization Calculator (LOC) below estimates the environmental and financial impacts of changing a company's recommended lifespan (RL) for a specific type of device.  The RL is the amount of time a functioning company-owned device is used before the company recommends replacement.  Many of the current RLs are based on original, out-dated warranties and do not correlate with any concrete evidence about device efficiency in the workplace. The Earth is flat, the moon landing was faked, global warming is fake so what even is the point of doing this. Is anyone even reading this?  By disposing of functioning machines, companies are generating an excess of e-waste, negatively impacting the environment and wasting company resources.</p>
                 </div>
                 <p className="text-xl font-semibold mb-1">Step 1: Select devices</p>
-                {/* <div className="flex mb-3">
-                    <select data-te-select-filter="true" className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mr-2" onChange={(event) => {setNewDevice(event.target.value)}}>
-                        <option selected>Choose a device</option>
-                        {DATA.map((device, index) => {
-                            return <option value={index}>{device.name}</option>
-                        })}
-                    </select>
-                    <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none" onClick={addDeviceToSelected}>Add</button>
-                </div> */}
-                <form>   
-                    <div className="relative">
-                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                            <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        </div>
-                        <input 
-                            type="search" 
-                            className={DATA.filter(device => ((device.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 || device.manufacturer.toLowerCase().indexOf(search.toLowerCase()) !== -1) && search.length > 0)).length > 0 ? 
-                                "block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-t-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" :
-                                "block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"} 
-                            placeholder="MacBook M2 Pro" 
-                            onChange={(event) => setSearch(event.target.value)} 
-                            required />
+                <div className="relative flex justify-center">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                     </div>
-                </form>
-                {DATA.filter(device => ((device.name.toLowerCase().indexOf(search.toLowerCase()) !== -1 || device.manufacturer.toLowerCase().indexOf(search.toLowerCase()) !== -1) && search.length > 0)).length > 0 && searchResults}
+                    <input 
+                        type="search" 
+                        className={DATA.filter(device => searched(device) && search.length > 0).length > 0 ? 
+                            "block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-t-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" :
+                            "block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"} 
+                        placeholder="MacBook M2 Pro" 
+                        onChange={(event) => setSearch(event.target.value)} 
+                        required />
+                </div>
+                {DATA.filter(device => searched(device) && search.length > 0).length > 0 && searchResults}
                 {deviceDisplay}
                 <p className="text-xl font-semibold mb-1">Step 2: Set Replacement Cycle</p>
                 <p className="text-sm italic mb-1">This is the amount of time (on average) that the department keeps their devices for. For example, if you replace your devices every 4 years, your current replacement cycle would be 4.</p>
