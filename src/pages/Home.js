@@ -78,11 +78,10 @@ function Home() {
     );
 
     const getHighlightedText = (text, highlight) => {
-        // Split text on highlight term, include term itself into parts, ignore case
         const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
         return (
             <div className="font-normal">
-                {parts.map(part => part.toLowerCase() === highlight.toLowerCase() ? <span className="font-medium">{part}</span> : part)}
+                {parts.map(part => part.toLowerCase() === highlight.toLowerCase() ? <span className="font-bold">{part}</span> : part)}
             </div>
         );
     }
