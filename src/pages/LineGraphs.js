@@ -1,5 +1,6 @@
 import { Line } from "react-chartjs-2";
 import DATA from '../assets/devices.json';
+import annotationPlugin from "chartjs-plugin-annotation";
 
 import {
     Chart as ChartJS,
@@ -21,13 +22,16 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
         LineElement,
         Title,
         Tooltip,
-        Legend
+        Legend,
+        annotationPlugin
     );
 
     const labels = [];
     const env = [];
     const fin = [];
     const backgroundColor = []
+    let finHeight = 0;
+    let envHeight = 0;
 
     let totalCost = 0;
     let GHG = 0;
@@ -35,13 +39,21 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
         totalCost += device.quantity * DATA[device.index].cost;
         GHG += device.quantity * DATA[device.index].footprint;
     });
-    console.log(currentLifespan);
 
     for (let i = currentLifespan; i < currentLifespan + 8.5; i += .5) {
         labels.push(i);
         fin.push((totalCost / currentLifespan) - (totalCost / i));
         env.push((GHG / currentLifespan) - (GHG / i));
-        backgroundColor.push((i == newLifespan ? 'rgb(223, 9, 9)' : 'rgb(29, 78, 216, 255)'));
+        backgroundColor.push((i === newLifespan ? 'rgb(223, 9, 9)' : 'rgb(29, 78, 216, 255)'));
+        if (i === newLifespan) {
+            finHeight = (totalCost / currentLifespan) - (totalCost / i);
+            envHeight = (GHG / currentLifespan) - (GHG / i);
+        }
+    }
+
+    if (currentLifespan === 0) {
+        envHeight = 0;
+        finHeight = 0;
     }
 
 
@@ -82,6 +94,19 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
                             title: {
                                 display: false,
                             },
+                            annotation: {
+                                annotations: {
+                                    line1: {
+                                        type: 'line',
+                                        xMin: (newLifespan - currentLifespan) * 2,
+                                        xMax: (newLifespan - currentLifespan) * 2,
+                                        yMin: 0,
+                                        yMax: finHeight,
+                                        borderColor: 'rgb(223, 9, 9)',
+                                        borderWidth: 2,
+                                    }
+                                }
+                            }
                         },
                         scales: {
                             y: {
@@ -96,7 +121,7 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
                                     text: 'New Replacement Cycle (years)'
                                 }
                             },
-                        }
+                        },
                     }
                 } />
             </div>
@@ -112,6 +137,19 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
                             title: {
                                 display: false,
                             },
+                            annotation: {
+                                annotations: {
+                                    line1: {
+                                        type: 'line',
+                                        xMin: (newLifespan - currentLifespan) * 2,
+                                        xMax: (newLifespan - currentLifespan) * 2,
+                                        yMin: 0,
+                                        yMax: envHeight,
+                                        borderColor: 'rgb(223, 9, 9)',
+                                        borderWidth: 2,
+                                    }
+                                }
+                            }
                         },
                         scales: {
                             y: {
