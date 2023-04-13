@@ -56,7 +56,6 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
         finHeight = 0;
     }
 
-
     const financial = {
         labels: labels,
         datasets: [{
