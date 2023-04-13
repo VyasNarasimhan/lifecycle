@@ -215,6 +215,7 @@ function Home() {
                             "block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"} 
                         placeholder="MacBook M2 Pro" 
                         onChange={(event) => setSearch(event.target.value)} 
+                        value={search}
                         required />
                 </div>
                 {DATA.filter(device => searched(device) && search.length > 0).length > 0 && searchResults}
