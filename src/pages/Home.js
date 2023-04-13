@@ -201,7 +201,7 @@ function Home() {
             <div className="p-10 lg:px-64">
                 <div className="text-center mb-5">
                     <p className="text-3xl font-bold mb-2">Lifecycle Optimization Calculator</p>
-                    <p className="text-lg font-light mb-2">The Lifecycle Optimization Calculator (LOC) below estimates the environmental and financial impacts of changing a company's recommended lifespan (RL) for a specific type of device.  The RL is the amount of time a functioning company-owned device is used before the company recommends replacement.  Many of the current RLs are based on original, out-dated warranties and do not correlate with any concrete evidence about device efficiency in the workplace. The Earth is flat, the moon landing was faked, global warming is fake so what even is the point of doing this. Is anyone even reading this?  By disposing of functioning machines, companies are generating an excess of e-waste, negatively impacting the environment and wasting company resources.</p>
+                    <p className="text-lg font-light mb-2">Replace laptops less frequently, and get the expected savings.</p>
                 </div>
                 <p className="text-xl font-semibold mb-1">Step 1: Select devices</p>
                 <div className="relative flex justify-center">
@@ -285,6 +285,9 @@ function Home() {
                 {results}
                 <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} />
                 <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
+                <br />
+                <br />
+                <p className="text-lg font-light mb-2">The Lifecycle Optimization Calculator (LOC) below estimates the environmental and financial impacts of changing a company's recommended lifespan (RL) for a specific type of device.  The RL is the amount of time a functioning company-owned device is used before the company recommends replacement.  Many of the current RLs are based on original, out-dated warranties and do not correlate with any concrete evidence about device efficiency in the workplace. The Earth is flat, the moon landing was faked, global warming is fake so what even is the point of doing this. Is anyone even reading this?  By disposing of functioning machines, companies are generating an excess of e-waste, negatively impacting the environment and wasting company resources.</p>
             </div>
         </div>
     );
