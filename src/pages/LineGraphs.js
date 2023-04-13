@@ -12,7 +12,7 @@ import {
     Legend,
   } from 'chart.js';
 
-function LineGraphs({currentLifespan, selectedDevices}) {
+function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
 
     ChartJS.register(
         CategoryScale,
@@ -27,6 +27,7 @@ function LineGraphs({currentLifespan, selectedDevices}) {
     const labels = [];
     const env = [];
     const fin = [];
+    const backgroundColor = []
 
     let totalCost = 0;
     let GHG = 0;
@@ -41,6 +42,7 @@ function LineGraphs({currentLifespan, selectedDevices}) {
         labels.push(i);
         fin.push((totalCost / currentLifespan) - (totalCost / i));
         env.push((GHG / currentLifespan) - (GHG / i));
+        backgroundColor.push((i == newLifespan ? 'rgb(223, 9, 9)' : 'rgb(29, 78, 216, 255)'));
     }
 
 
@@ -49,6 +51,8 @@ function LineGraphs({currentLifespan, selectedDevices}) {
         datasets: [{
             data: fin,
             fill: false,
+            pointBackgroundColor: backgroundColor,
+            pointBorderColor: backgroundColor,
             borderColor: 'rgb(29, 78, 216, 255)',
             tension: 0.1
         }]
@@ -58,6 +62,8 @@ function LineGraphs({currentLifespan, selectedDevices}) {
         datasets: [{
             data: env,
             fill: false,
+            pointBackgroundColor: backgroundColor,
+            pointBorderColor: backgroundColor,
             borderColor: 'rgb(29, 78, 216, 255)',
             tension: 0.1
         }]

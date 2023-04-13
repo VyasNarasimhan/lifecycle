@@ -283,7 +283,7 @@ function Home() {
                 </div>}
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
                 {results}
-                <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} />
+                <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} newLifespan={parseFloat(newLifespan)}/>
                 <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
                 <br />
                 <br />
