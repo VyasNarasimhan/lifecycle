@@ -38,7 +38,6 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
     console.log(currentLifespan);
 
     for (let i = currentLifespan; i < currentLifespan + 8.5; i += .5) {
-        console.log(i);
         labels.push(i);
         fin.push((totalCost / currentLifespan) - (totalCost / i));
         env.push((GHG / currentLifespan) - (GHG / i));
