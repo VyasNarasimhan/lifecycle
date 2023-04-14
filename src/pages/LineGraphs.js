@@ -34,20 +34,26 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
     let envHeight = 0;
 
     let totalCost = 0;
-    let GHG = 0;
+    // let GHG = 0;
+    let GHG1 = 0;
     selectedDevices.forEach((device) => {
         totalCost += device.quantity * DATA[device.index].cost;
-        GHG += device.quantity * DATA[device.index].footprint;
+        // GHG += device.quantity * DATA[device.index].footprint;
+        GHG1 += device.quantity * (.85 * DATA[device.index].footprint + (currentLifespan * .15 * DATA[device.index].footprint) / 4);
     });
 
     for (let i = currentLifespan; i < currentLifespan + 8.5; i += .5) {
+        let GHG2 = 0;
+        selectedDevices.forEach((device) => {
+            GHG2 += device.quantity * (.85 * DATA[device.index].footprint + (i * .15 * DATA[device.index].footprint) / 4);
+        });
         labels.push(i);
         fin.push((totalCost / currentLifespan) - (totalCost / i));
-        env.push((GHG / currentLifespan) - (GHG / i));
+        env.push((GHG1 / currentLifespan) - (GHG2 / i));
         backgroundColor.push((i === newLifespan ? 'rgb(223, 9, 9)' : 'rgb(29, 78, 216, 255)'));
         if (i === newLifespan) {
             finHeight = (totalCost / currentLifespan) - (totalCost / i);
-            envHeight = (GHG / currentLifespan) - (GHG / i);
+            envHeight = (GHG1 / currentLifespan) - (GHG2 / i);
         }
     }
 
@@ -120,7 +126,7 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
                                     text: 'New Replacement Cycle (years)'
                                 }
                             },
-                        },
+                        }
                     }
                 } />
             </div>

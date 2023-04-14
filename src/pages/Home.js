@@ -46,17 +46,22 @@ function Home() {
 
     const calculate = () => {
         let totalCost = 0;
-        let GHG = 0;
+        // let GHG = 0;
+        let GHG1 = 0;
+        let GHG2 = 0;
         selectedDevices.forEach((device) => {
             totalCost += device.quantity * DATA[device.index].cost;
-            GHG += device.quantity * DATA[device.index].footprint;
+            // GHG += device.quantity * DATA[device.index].footprint;
+            GHG1 += device.quantity * (.85 * DATA[device.index].footprint + (currentLifespan * .15 * DATA[device.index].footprint) / 4);
+            GHG2 += device.quantity * (.85 * DATA[device.index].footprint + (newLifespan * .15 * DATA[device.index].footprint) / 4);
         });
         const prevCost = totalCost / currentLifespan;
         const newCost = totalCost / newLifespan;
         const totalSaved = prevCost - newCost;
-        const prevGHG = GHG / currentLifespan;
-        const newGHG = GHG / newLifespan;
-        GHG = prevGHG - newGHG;
+        // const prevGHG = GHG / currentLifespan;
+        // const newGHG = GHG / newLifespan;
+        // GHG = prevGHG - newGHG;
+        const GHG = GHG1 / currentLifespan - GHG2 / newLifespan;
         const gallonsOfGas = (GHG * 2445/ 1000);
         const trashRecycled = (GHG * 43.6 / 1000);
         const seedlings = (GHG * 16.5/1000);
@@ -225,7 +230,7 @@ function Home() {
                 <p className="text-lg font-semibold text-center">Current Replacement Cycle (years)</p>
                 <input
                     type="range"
-                    className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
+                    className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200 accent-blue-700"
                     min="0"
                     max="8"
                     step="0.5"
@@ -253,7 +258,7 @@ function Home() {
                 <p className="text-lg font-semibold text-center">New Replacement Cycle (years)</p>
                 <input
                     type="range"
-                    className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
+                    className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200 accent-blue-700"
                     min="0"
                     max="8"
                     step="0.5"
@@ -285,7 +290,7 @@ function Home() {
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
                 {results}
                 <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} newLifespan={parseFloat(newLifespan)}/>
-                <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
+                <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank" rel="noreferrer">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
                 <br />
                 <br />
                 {/* <p className="text-lg font-light mb-2">The Lifecycle Optimization Calculator (LOC) below estimates the environmental and financial impacts of changing a company's recommended lifespan (RL) for a specific type of device.  The RL is the amount of time a functioning company-owned device is used before the company recommends replacement.  Many of the current RLs are based on original, out-dated warranties and do not correlate with any concrete evidence about device efficiency in the workplace. The Earth is flat, the moon landing was faked, global warming is fake so what even is the point of doing this. Is anyone even reading this?  By disposing of functioning machines, companies are generating an excess of e-waste, negatively impacting the environment and wasting company resources.</p> */}
