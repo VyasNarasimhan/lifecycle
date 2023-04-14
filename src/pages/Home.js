@@ -2,10 +2,10 @@
 // import tracker from '../assets/tracker.png';
 // import focus from '../assets/focus.png';
 import React from "react";
-import DATA from '../assets/devices.json';
 import LineGraphs from "./LineGraphs";
 import SearchBar from "./SearchBar";
 import SelectedDevices from "./SelectedDevices";
+import Results from "./Results";
 
 function Home() {
 
@@ -13,46 +13,6 @@ function Home() {
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
     const [newLifespan, setNewLifespan] = React.useState(0);
     const [search, setSearch] = React.useState('');
-
-    const calculate = () => {
-        let totalCost = 0;
-        // let GHG = 0;
-        let GHG1 = 0;
-        let GHG2 = 0;
-        selectedDevices.forEach((device) => {
-            totalCost += device.quantity * DATA[device.index].cost;
-            // GHG += device.quantity * DATA[device.index].footprint;
-            GHG1 += device.quantity * (.85 * DATA[device.index].footprint + (currentLifespan * .15 * DATA[device.index].footprint) / 4);
-            GHG2 += device.quantity * (.85 * DATA[device.index].footprint + (newLifespan * .15 * DATA[device.index].footprint) / 4);
-        });
-        const prevCost = totalCost / currentLifespan;
-        const newCost = totalCost / newLifespan;
-        const totalSaved = prevCost - newCost;
-        // const prevGHG = GHG / currentLifespan;
-        // const newGHG = GHG / newLifespan;
-        // GHG = prevGHG - newGHG;
-        const GHG = GHG1 / currentLifespan - GHG2 / newLifespan;
-        const gallonsOfGas = (GHG * 2445/ 1000);
-        const trashRecycled = (GHG * 43.6 / 1000);
-        const seedlings = (GHG * 16.5/1000);
-        return (
-            <p className="text-lg font-light mb-2">If you update your RL to {parseFloat(newLifespan)} {parseFloat(newLifespan) === 1 ? 'year' : 'years'}, your estimated annual savings are <b>${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</b> and <b>{parseInt(GHG)}</b> kg of CO2 equivalent. That is equivalent to driving {parseInt(gallonsOfGas)} fewer {parseInt(gallonsOfGas) === 1 ? 'mile' : 'miles'}, planting {parseInt(seedlings)} new {parseInt(seedlings) === 1 ? 'seedling' : 'seedlings'} and letting them grow for ten years, or recycling {parseInt(trashRecycled)} {parseInt(trashRecycled) === 1 ? 'bag' : 'bags'} of trash instead of throwing them in the landfill!</p>
-        );
-    }
-
-    let results = (
-        <div className="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 mb-3" role="alert">
-            <span className="font-medium">Once you've entered all of the above information, your results will be displayed here</span>
-        </div>
-    );
-
-    if (selectedDevices.length > 0) {
-        if (currentLifespan > 0 && newLifespan > 0) {
-            results = (
-                calculate()
-            );
-        }
-    }
 
     return (
         <div className="container m-auto">
@@ -127,11 +87,11 @@ function Home() {
                     <span className="font-medium">Your new replacement cycle is smaller than your existing replacement cycle. This will result in you spending more money and more carbon emissions.</span>
                 </div>}
                 <p className="text-xl font-semibold mb-1">Step 3: View your potential savings</p>
-                {results}
+                <Results selectedDevices={selectedDevices} currentLifespan={parseFloat(currentLifespan)} newLifespan={parseFloat(newLifespan)} />
                 <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} newLifespan={parseFloat(newLifespan)}/>
                 <p className="italic text-sm font-normal text-center">Environmental equivalencies calculated from <a className="text-blue-600 hover:underline" href="https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator" target="_blank" rel="noreferrer">https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator</a>.</p>
-                <br />
-                <br />
+                {/* <br />
+                <br /> */}
                 {/* <p className="text-lg font-light mb-2">The Lifecycle Optimization Calculator (LOC) below estimates the environmental and financial impacts of changing a company's recommended lifespan (RL) for a specific type of device.  The RL is the amount of time a functioning company-owned device is used before the company recommends replacement.  Many of the current RLs are based on original, out-dated warranties and do not correlate with any concrete evidence about device efficiency in the workplace. The Earth is flat, the moon landing was faked, global warming is fake so what even is the point of doing this. Is anyone even reading this?  By disposing of functioning machines, companies are generating an excess of e-waste, negatively impacting the environment and wasting company resources.</p> */}
             </div>
         </div>
