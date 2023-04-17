@@ -16,7 +16,7 @@ function Home() {
 
     return (
         <div className="container m-auto">
-            <div className="p-10 lg:px-64">
+            <div className="p-10 lg:px-56">
                 <div className="text-center mb-5">
                     <p className="text-3xl font-bold mb-2">Lifecycle Optimization Calculator</p>
                     <p className="text-lg font-light mb-2">Replace laptops less frequently, and get the expected savings.</p>
