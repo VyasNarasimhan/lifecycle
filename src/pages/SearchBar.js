@@ -11,7 +11,7 @@ function SearchBar({setSelectedDevices, setSearch, selectedDevices, search}) {
         }
         setSelectedDevices([
             ...selectedDevices,
-            {'index': index, 'quantity': 1}
+            {'index': index, 'quantity': 1, 'split': false}
         ]);
         setSearch('');
     }

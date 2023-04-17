@@ -28,7 +28,7 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
         );
     }
 
-    if (selectedDevices.length === 0) {
+    if (selectedDevices.length === 0 || currentLifespan === 0 || newLifespan === 0) {
         return (
             <div className="p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 mb-3" role="alert">
                 <span className="font-medium">Once you've entered all of the above information, your results will be displayed here</span>

@@ -1,6 +1,11 @@
+import React, { useState } from "react";
+import CO2Info from './CO2Info';
+
 import DATA from '../assets/devices.json';
 
 function SelectedDevices({setSelectedDevices, selectedDevices}) {
+
+    const [showModal, setShowModal] = useState(false);
 
     const deleteRow = (device) => {
         setSelectedDevices(
@@ -14,6 +19,16 @@ function SelectedDevices({setSelectedDevices, selectedDevices}) {
         setSelectedDevices(selectedDevices.map(selected => {
             if (selected.index === device.index) {
                 return {'index': device.index, 'quantity': event.target.value};
+            } else {
+                return selected;
+            }
+        }));
+    }
+
+    const updateSplit = (device) => {
+        setSelectedDevices(selectedDevices.map(selected => {
+            if (selected.index === device.index) {
+                return {'index': device.index, 'quantity': device.quantity, 'split': !device.split};
             } else {
                 return selected;
             }
@@ -47,7 +62,14 @@ function SelectedDevices({setSelectedDevices, selectedDevices}) {
                                     Cost
                                 </th>
                                 <th scope="col" className="px-6 py-3">
+                                    <span className="inline-flex items-center">
                                     Carbon Footprint
+                                    <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-1 py-1 text-center ml-1" onClick={() => {setShowModal(!showModal)}}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+                                        </svg>
+                                    </button>
+                                    </span>
                                 </th>
                             </tr>
                         </thead>
@@ -68,7 +90,7 @@ function SelectedDevices({setSelectedDevices, selectedDevices}) {
                                             ${DATA[device.index].cost}
                                         </td>
                                         <td className="px-6 py-4">
-                                            {DATA[device.index].footprint} kg
+                                            <p onClick={() => {updateSplit(device)}}>{device.split ? Math.round(.85 * DATA[device.index].footprint).toString() + ' + ' + Math.round(.15 * DATA[device.index].footprint / 4).toString() : DATA[device.index].footprint} kg</p>
                                         </td>
                                         <td className="px-6 py-4">
                                             <button type="button" className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg px-2.5 py-2.5">
@@ -82,6 +104,7 @@ function SelectedDevices({setSelectedDevices, selectedDevices}) {
                             })}
                         </tbody>
                     </table>
+                    <CO2Info showModal={showModal} setShowModal={setShowModal}/>
                 </div>
             </div>
         );
