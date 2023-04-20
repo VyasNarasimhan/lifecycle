@@ -86,7 +86,7 @@ function LineGraphs({currentLifespan, selectedDevices, newLifespan}) {
     };
 
     return (
-        <div class="grid xl:grid-cols-2 gap-4">
+        <div className="grid xl:grid-cols-2 gap-4">
             <div>
                 <p className="text-lg font-semibold text-center">Financial Savings</p>
                 <Line data={financial} options={
