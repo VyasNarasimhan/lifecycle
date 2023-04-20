@@ -22,28 +22,57 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
         const macs = Math.round(totalSaved / 1500);
         const tuition = Math.round(totalSaved / 40000);
         const tesla = Math.round(totalSaved / 42990);
-        const values = [gallonsOfGas, trashRecycled, seedlings, macs, tuition, tesla];
-        const endings = ['fewer miles driven', 'bags of trash recycled instead of throwing them in the landfill', 'seedlings planted and letting them grow for 10 years', 'new MacBook Pros', 'years of tuition paid by an Engineering student at UVA', 'Tesla Model 3s'];
+        const values = [gallonsOfGas, trashRecycled, seedlings];
+        const values1 = [macs, tuition, tesla];
+        const endings = ['fewer miles driven', 'bags of trash recycled instead of throwing them in the landfill', 'seedlings planted and letting them grow for 10 years'];
+        const endings1 = ['new MacBook Pros', 'years of tuition paid by an Engineering student at UVA', 'Tesla Model 3s'];
         return (
             <div>
+                
                 <div className="grid grid-cols-2 gap-2 mb-2">
-                    <div className="p-2 bg-white border border-blue-700 rounded-lg shadow mx-3">
+                    <div className="p-2 bg-white border shadow-md rounded-lg shadow mx-3">
                         <p className="text-3xl font-bold text-center">${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</p>
                     </div>
-                    <div className="p-2 bg-white border border-blue-700 rounded-lg shadow mx-3">
-                        <p className="text-3xl font-bold text-center">{parseInt(GHG).toLocaleString('en-US')} kg</p>
+                    <div className="p-2 bg-white border shadow-md rounded-lg shadow mx-3">
+                        <p className="text-3xl font-bold text-center">{parseInt(GHG).toLocaleString('en-US')} kg CO2e</p>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 gap-2 mb-2">
+                {/* <div className="grid grid-cols-3 gap-2 mb-2">
                     {values.map((value, index) => {
                         return (
-                            <div className="p-2 bg-white border border-blue-700 rounded-lg shadow flex items-center mx-3">
+                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3">
                                 <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
                                 <p className="ml-3 flex justify-end">
                                     {endings[index]}
                                 </p>
                             </div>
                         );
+                    })}
+                </div> */}
+                <p className='text-xl mb-1 font-semibold text-center'>CO2 Equivalencies</p>
+                <div className='grid grid-cols-3 gap-2 mb-2'>
+                    {values.map((value, index) => {
+                        return(
+                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3">
+                                <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
+                                <p className="ml-3 flex justify-end">
+                                    {endings[index]}
+                                </p>
+                            </div>
+                        )
+                    })}
+                </div>
+                <p className='text-xl mb-1 font-semibold text-center'>Cost Equivalencies</p>
+                <div className='grid grid-cols-3 gap-2 mb-2'>
+                    {values1.map((value, index) => {
+                        return(
+                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3">
+                                <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
+                                <p className="ml-3 flex justify-end">
+                                    {endings1[index]}
+                                </p>
+                            </div>
+                        )
                     })}
                 </div>
             </div>
