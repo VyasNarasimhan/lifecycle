@@ -16,7 +16,7 @@ function Home() {
     const [pageLoad, setPageLoad] = React.useState(false);
 
     if (!pageLoad) {
-        if (localStorage.getItem('selectedDevices') !== '[]' && selectedDevices.length === 0) {
+        if (!!localStorage.getItem('selectedDevices') && localStorage.getItem('selectedDevices') !== '[]' && selectedDevices.length === 0) {
             setSelectedDevices(JSON.parse(localStorage.getItem('selectedDevices')));
         }
         setPageLoad(true);
