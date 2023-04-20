@@ -13,6 +13,14 @@ function Home() {
     const [currentLifespan, setCurrentLifespan] = React.useState(0);
     const [newLifespan, setNewLifespan] = React.useState(0);
     const [search, setSearch] = React.useState('');
+    const [pageLoad, setPageLoad] = React.useState(false);
+
+    if (!pageLoad) {
+        if (localStorage.getItem('selectedDevices') !== '[]' && selectedDevices.length === 0) {
+            setSelectedDevices(JSON.parse(localStorage.getItem('selectedDevices')));
+        }
+        setPageLoad(true);
+    }
 
     return (
         <div className="container m-auto">
@@ -21,12 +29,12 @@ function Home() {
                     <p className="text-3xl font-bold mb-2">Lifecycle Optimization Calculator</p>
                     <p className="text-lg font-light mb-2">Replace laptops less frequently, and get the expected savings.</p>
                 </div>
-                <div class="p-4 bg-white border border-gray-300 rounded-lg shadow mb-3">
+                <div className="p-4 bg-white border border-gray-300 rounded-lg shadow mb-3">
                     <p className="text-xl font-semibold mb-1">Step 1: Select devices</p>
                     <SearchBar setSelectedDevices={setSelectedDevices} setSearch={setSearch} selectedDevices={selectedDevices} search={search} />
                     <SelectedDevices setSelectedDevices={setSelectedDevices} selectedDevices={selectedDevices} />
                 </div>
-                <div class="p-4 bg-white border border-gray-300 rounded-lg shadow mb-3">
+                <div className="p-4 bg-white border border-gray-300 rounded-lg shadow mb-3">
                     <p className="text-xl font-semibold mb-1">Step 2: Set Replacement Cycle</p>
                     <p className="text-sm italic mb-1">This is the amount of time (on average) that the department keeps their devices for. For example, if you replace your devices every 4 years, your current replacement cycle would be 4.</p>
                     <p className="text-lg font-semibold text-center">Current Replacement Cycle (years)</p>
@@ -90,7 +98,7 @@ function Home() {
                         <span className="font-medium">Your new replacement cycle is smaller than your existing replacement cycle. This will result in you spending more money and more carbon emissions.</span>
                     </div>}
                 </div>
-                <div class="p-4 bg-white border border-gray-300 rounded-lg shadow mb-3">
+                <div className="p-4 bg-white border border-gray-300 rounded-lg shadow mb-3">
                     <p className="text-xl font-semibold mb-2">Step 3: View your potential savings</p>
                     <Results selectedDevices={selectedDevices} currentLifespan={parseFloat(currentLifespan)} newLifespan={parseFloat(newLifespan)} />
                     <LineGraphs currentLifespan={parseFloat(currentLifespan)} selectedDevices={selectedDevices} newLifespan={parseFloat(newLifespan)}/>

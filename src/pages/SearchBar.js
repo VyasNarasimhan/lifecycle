@@ -1,6 +1,12 @@
+import { useEffect } from "react";
+
 import DATA from '../assets/devices.json';
 
 function SearchBar({setSelectedDevices, setSearch, selectedDevices, search}) {
+
+    useEffect(() => {
+        localStorage.setItem('selectedDevices', JSON.stringify(selectedDevices));
+    });
 
     const addDevice = (device) => {
         const index = DATA.indexOf(device);
@@ -14,6 +20,7 @@ function SearchBar({setSelectedDevices, setSearch, selectedDevices, search}) {
             {'index': index, 'quantity': 1, 'split': false}
         ]);
         setSearch('');
+        localStorage.setItem('selectedDevices', JSON.stringify(selectedDevices));
     }
 
     const getHighlightedText = (text, highlight) => {
