@@ -28,32 +28,19 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
         const endings1 = ['new MacBook Pros', 'years of tuition paid by an Engineering student at UVA', 'Tesla Model 3s'];
         return (
             <div>
-                
-                <div className="grid grid-cols-2 gap-2 mb-2">
-                    <div className="p-2 bg-white border shadow-md rounded-lg shadow mx-3">
+                <div className="xl:grid grid-cols-2 gap-2 mb-2">
+                    <div className="p-2 bg-white border shadow-md rounded-lg shadow mx-3 mb-2 xl:mb-0">
                         <p className="text-3xl font-bold text-center">${totalSaved.toLocaleString('en-US', {maximumFractionDigits:2})}</p>
                     </div>
-                    <div className="p-2 bg-white border shadow-md rounded-lg shadow mx-3">
+                    <div className="p-2 bg-white border shadow-md rounded-lg shadow mx-3 mb-2 xl:mb-0">
                         <p className="text-3xl font-bold text-center">{parseInt(GHG).toLocaleString('en-US')} kg CO2e</p>
                     </div>
                 </div>
-                {/* <div className="grid grid-cols-3 gap-2 mb-2">
-                    {values.map((value, index) => {
-                        return (
-                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3">
-                                <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
-                                <p className="ml-3 flex justify-end">
-                                    {endings[index]}
-                                </p>
-                            </div>
-                        );
-                    })}
-                </div> */}
                 <p className='text-xl mb-1 font-semibold text-center'>CO2 Equivalencies</p>
-                <div className='grid grid-cols-3 gap-2 mb-2'>
+                <div className='xl:grid grid-cols-3 gap-2 mb-2'>
                     {values.map((value, index) => {
                         return(
-                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3">
+                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2 xl:mb-0">
                                 <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
                                 <p className="ml-3 flex justify-end">
                                     {endings[index]}
@@ -63,10 +50,10 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
                     })}
                 </div>
                 <p className='text-xl mb-1 font-semibold text-center'>Cost Equivalencies</p>
-                <div className='grid grid-cols-3 gap-2 mb-2'>
+                <div className='xl:grid grid-cols-3 gap-2 mb-2'>
                     {values1.map((value, index) => {
                         return(
-                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3">
+                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2 xl:mb-0">
                                 <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
                                 <p className="ml-3 flex justify-end">
                                     {endings1[index]}
