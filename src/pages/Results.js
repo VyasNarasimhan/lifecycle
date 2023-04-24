@@ -16,16 +16,36 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
         const totalSaved = prevCost - newCost;
         const GHG = GHG1 / currentLifespan - GHG2 / newLifespan;
 
-        const gallonsOfGas = Math.round(GHG * 2445/ 1000);
-        const trashRecycled = Math.round(GHG * 43.6 / 1000);
-        const seedlings = Math.round(GHG * 16.5/1000);
-        const macs = Math.round(totalSaved / 1500);
-        const tuition = Math.round(totalSaved / 40000);
-        const tesla = Math.round(totalSaved / 42990);
-        const values = [gallonsOfGas, trashRecycled, seedlings];
-        const values1 = [macs, tuition, tesla];
-        const endings = ['fewer miles driven', 'bags of trash recycled instead of throwing them in the landfill', 'seedlings planted and letting them grow for 10 years'];
-        const endings1 = ['new MacBook Pros', 'years of tuition paid by an Engineering student at UVA', 'Tesla Model 3s'];
+        const co2Equivalencies = [
+            {
+                'value': Math.round(GHG * 2445/ 1000),
+                'ending': 'fewer miles driven'
+            },
+            {
+                'value': Math.round(GHG * 43.6 / 1000),
+                'ending': 'bags of trash recycled instead of throwing them in the landfill'
+            },
+            {
+                'value': Math.round(GHG * 16.5/1000),
+                'ending': 'seedlings planted and letting them grow for 10 years'
+            }
+        ];
+
+        const costEquivalencies = [
+            {
+                'value': totalSaved < 20000 ? Math.round(totalSaved / 10) : Math.round(totalSaved / 20000),
+                'ending': totalSaved < 20000 ? 'bowls of Chipotle' : 'First Class flight tickets'
+            },
+            {
+                'value': totalSaved < 50000 ? Math.round(totalSaved / 500) : Math.round(totalSaved / 50000),
+                'ending': totalSaved < 50000 ? 'smart TVs' : 'down payments on a house'
+            },
+            {
+                'value': totalSaved < 40000 ? Math.round(totalSaved / 800) : Math.round(totalSaved / 40000),
+                'ending': totalSaved < 40000 ? 'smartphones' : 'years of tuition paid by an Engineering student at UVA'
+            }
+        ];
+
         return (
             <div>
                 <div className="xl:grid grid-cols-2 gap-2 mb-2">
@@ -38,12 +58,12 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
                 </div>
                 <p className='text-xl mb-1 font-semibold text-center'>CO2 Equivalencies</p>
                 <div className='xl:grid grid-cols-3 gap-2 mb-2'>
-                    {values.map((value, index) => {
+                    {co2Equivalencies.map((eq) => {
                         return(
                             <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2 xl:mb-0">
-                                <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
+                                <p className="text-2xl font-bold">{eq.value.toLocaleString('en-US')}</p>
                                 <p className="ml-3 flex justify-end">
-                                    {endings[index]}
+                                    {eq.ending}
                                 </p>
                             </div>
                         )
@@ -51,12 +71,12 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
                 </div>
                 <p className='text-xl mb-1 font-semibold text-center'>Cost Equivalencies</p>
                 <div className='xl:grid grid-cols-3 gap-2 mb-2'>
-                    {values1.map((value, index) => {
+                    {costEquivalencies.map((eq) => {
                         return(
                             <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2 xl:mb-0">
-                                <p className="text-2xl font-bold">{value.toLocaleString('en-US')}</p>
+                                <p className="text-2xl font-bold">{eq.value.toLocaleString('en-US')}</p>
                                 <p className="ml-3 flex justify-end">
-                                    {endings1[index]}
+                                    {eq.ending}
                                 </p>
                             </div>
                         )
