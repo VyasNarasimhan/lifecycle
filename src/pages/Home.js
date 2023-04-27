@@ -1,6 +1,3 @@
-// import github from '../assets/github-mark.png';
-// import tracker from '../assets/tracker.png';
-// import focus from '../assets/focus.png';
 import React from "react";
 import LineGraphs from "./LineGraphs";
 import SearchBar from "./SearchBar";

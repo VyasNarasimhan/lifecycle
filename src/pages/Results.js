@@ -56,31 +56,31 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
                         <p className="text-3xl font-bold text-center">{parseInt(GHG).toLocaleString('en-US')} kg CO2e</p>
                     </div>
                 </div>
-                <p className='text-xl mb-1 font-semibold text-center'>CO2 Equivalencies</p>
-                <div className='xl:grid grid-cols-3 gap-2 mb-2'>
-                    {co2Equivalencies.map((eq) => {
-                        return(
-                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2 xl:mb-0">
-                                <p className="text-2xl font-bold">{eq.value.toLocaleString('en-US')}</p>
-                                <p className="ml-3 flex justify-end">
-                                    {eq.ending}
-                                </p>
-                            </div>
-                        )
-                    })}
-                </div>
-                <p className='text-xl mb-1 font-semibold text-center'>Cost Equivalencies</p>
-                <div className='xl:grid grid-cols-3 gap-2 mb-2'>
-                    {costEquivalencies.map((eq) => {
-                        return(
-                            <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2 xl:mb-0">
-                                <p className="text-2xl font-bold">{eq.value.toLocaleString('en-US')}</p>
-                                <p className="ml-3 flex justify-end">
-                                    {eq.ending}
-                                </p>
-                            </div>
-                        )
-                    })}
+                <div className="xl:grid grid-cols-2 sm:hidden gap-2 mb-2">
+                    <div>
+                        {costEquivalencies.map((eq) => {
+                            return(
+                                <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2">
+                                    <p className="text-2xl font-bold">{eq.value.toLocaleString('en-US')}</p>
+                                    <p className="ml-3 flex justify-end">
+                                        {eq.ending}
+                                    </p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                    <div>
+                        {co2Equivalencies.map((eq) => {
+                            return(
+                                <div className="p-2 bg-white border shadow-md rounded-lg shadow flex items-center mx-3 mb-2">
+                                    <p className="text-2xl font-bold">{eq.value.toLocaleString('en-US')}</p>
+                                    <p className="ml-3 flex justify-end">
+                                        {eq.ending}
+                                    </p>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         );
