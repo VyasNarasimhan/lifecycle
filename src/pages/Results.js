@@ -56,7 +56,7 @@ function Results({selectedDevices, currentLifespan, newLifespan}) {
                         <p className="text-3xl font-bold text-center">{parseInt(GHG).toLocaleString('en-US')} kg CO2e</p>
                     </div>
                 </div>
-                <div className="xl:grid grid-cols-2 sm:hidden gap-2 mb-2">
+                <div className="xl:grid grid-cols-2 hidden xl:block gap-2 mb-2">
                     <div>
                         {costEquivalencies.map((eq) => {
                             return(
